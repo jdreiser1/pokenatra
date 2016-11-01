@@ -1,0 +1,16 @@
+<form action="/trainers/new" method="get">
+<input class="button-delete" type="submit" value="Create a New Trainer">
+</form>
+<h2>Trainers</h2>
+<% @trainers.each do |trainer|%>
+  <div class="pokemon">
+  <h3><%= trainer.name %></a></h3>
+  <img src="<%=trainer.img_url%>" />
+  <h3 style="line-height: 0.15;"><a href="/trainers/<%= trainer.id %>/edit">Edit</a></h3>
+  <form action="/trainers/<%= trainer.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input class="button-delete" type="submit" value="Delete!">
+  </form>
+  <h3><div class="pokemon"><a href="/trainers/<%= trainer.id %>/pokemons"><%= trainer.name %>'s Pokedex</a></div></h3>
+  </div>
+<% end %>

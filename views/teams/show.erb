@@ -1,0 +1,9 @@
+<h2><a href="/teams">Back to Teams</a></h2>
+<div class="pokemon">
+  <h3>Team Name: <%= @team.name %></h3>
+  <h3 style="line-height: 0.15;"><a href="/teams/<%= @team.id %>/edit">Edit</a></h3>
+  <form action="/teams/<%= @team.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete this team!">
+  </form>
+</div>

@@ -1,0 +1,12 @@
+<h2><a href="/pokemons">Back to Pokedex</a></h2>
+<div class="pokemon">
+  <h3>Pokemon Name: <%= @pokemon.name %></h3>
+  <img src="<%=@pokemon.img_url%>" />
+  <h3 style="line-height: 0.15;">CP: <%= @pokemon.cp %></h3>
+  <h3>Pokemon Type: <%= @pokemon.poke_type %></h3>
+  <h3 style="line-height: 0.15;"><a href="/pokemons/<%= @pokemon.id %>/edit">Edit</a></h3>
+  <form action="/pokemons/<%= @pokemon.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+  </form>
+</div>

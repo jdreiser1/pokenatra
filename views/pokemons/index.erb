@@ -1,0 +1,9 @@
+<form action="/pokemons/new" method="get">
+<input class="button-delete" type="submit" value="Create a New Pokemon">
+</form>
+<h2>Pokemon</h2>
+<div class="pokemon">
+<% @pokemons.each do |pokemon|%>
+  <h3><a href="/pokemons/<%= pokemon.id %>"><%= pokemon.name %></a></h3>
+<% end %>
+</div>

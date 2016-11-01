@@ -1,0 +1,14 @@
+<h3>Pokedex</h3>
+<% @trainer.pokemons.each do |pokemon| %>
+  <div class="pokemon">
+  <h3><a href="/pokemons/<%= pokemon.id %>"><%= pokemon.name %></a></h3>
+  <img src="<%=pokemon.img_url%>" />
+  <h3 style="line-height: 0.15;">CP: <%= pokemon.cp %></h3>
+  <h3>Poke_Type: <%= pokemon.poke_type %></h3>
+  <h3 style="line-height: 0.15;"><a href="/pokemons/<%= pokemon.id %>/edit">Edit</a></h3>
+  <form action="/pokemons/<%= pokemon.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input class="button-delete" type="submit" value="Delete from pokedex!">
+  </form>
+  </div>
+  <% end %>
